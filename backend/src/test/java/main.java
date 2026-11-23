@@ -15,7 +15,7 @@ public class main {
         List<User> uu = u.listarTodos();
 
         for(User x : uu){
-            System.out.println(x.getUser());
+            System.out.println(x.getUser()+" , "+x.getPassword());
         }
 
     }
