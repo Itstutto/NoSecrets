@@ -30,6 +30,14 @@ public class ServidorHttp {
             }
         });
 
+        server.createContext("/fer",exchange -> {
+            byte[] respuesta = ("Te amo").getBytes(StandardCharsets.UTF_8);
+            exchange.sendResponseHeaders(200,respuesta.length);
+            try (OutputStream os = exchange.getResponseBody()){
+                os.write(respuesta);
+            }
+        });
+
         server.createContext("/login", uController::login);
         server.start();
 
