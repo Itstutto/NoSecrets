@@ -15,8 +15,8 @@ public class Pruebahttp {
         HttpClient cliente = HttpClient.newHttpClient();
 
         Gson gson = new Gson();
-        LoginDTO dto = new LoginDTO("admin","admin1234");
-        HttpRequest peticion = HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/login")).
+        LoginDTO dto = new LoginDTO("user","user1234");
+        HttpRequest peticion = HttpRequest.newBuilder().uri(URI.create("http://51.255.193.215:8080/login")).
                 header("Content-Type","aplication/json").POST(HttpRequest.BodyPublishers.ofString(gson.toJson(dto))).build();
 
 
